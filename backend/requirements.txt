@@ -1,0 +1,21 @@
+# 1. Web Framework & Server
+fastapi>=0.100.0
+uvicorn[standard]>=0.20.0
+python-multipart    # UploadFile 처리를 위해 필수
+
+# 2. Data Processing (CDC Logic)
+pandas>=2.0.0
+numpy>=1.24.0
+openpyxl            # 엑셀 파일(.xlsx) 읽기/쓰기를 위해 필수
+
+# 3. Database
+sqlalchemy>=2.0.0
+
+# 4. AI & LangChain
+langchain-openai
+langchain-core
+openai
+
+# 5. Utilities
+pydantic>=2.0.0
+typing-extensions

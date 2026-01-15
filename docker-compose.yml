@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  # 1. 백엔드 서비스
+  backend:
+    build: ./backend
+    container_name: cdc-backend
+    restart: always
+    volumes:
+      - ./backend_data:/app/data
+    expose:
+      # - "8000"
+      - "7676"
+    # 🔥 [핵심 1] 외부 vLLM 서버 접속 정보 주입
+    environment:
+      - VLLM_API_BASE=http://10.23.80.35:8881/v1
+      - VLLM_MODEL_NAME=llama-hist
+      # 필요 시 OPENAI_API_KEY 등도 여기에 추가
+      # - OPENAI_API_KEY=sk-xxxx... 
+
+  # 2. 프론트엔드 서비스 (Nginx)
+  frontend:
+    build: ./frontend
+    container_name: cdc-frontend
+    restart: always
+    ports:
+      # 🔥 [핵심 2] 외부(Host) 1577 포트를 내부 80 포트로 연결
+      # 이제 브라우저에서 http://10.23.80.35:1577 로 접속 가능
+      - "5173:80"
+    depends_on:
+      - backend

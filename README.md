@@ -181,25 +181,7 @@ cdc_report/
 - **프로덕션 배포**: 프로덕션 환경에서는 `docker-compose.yml`의 하드코딩된 IP 주소를 환경 변수로 변경하세요
 - **CORS 설정**: 프로덕션에서는 `main.py`의 CORS 설정을 적절히 제한하세요
 
-## 🤝 기여하기
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 라이선스
-
-이 프로젝트는 MIT 라이선스를 따릅니다.
-
 ## 👥 작성자
 
-- **Your Name** - *Initial work*
-
-## 🙏 감사의 말
-
-- Material-UI 팀
-- FastAPI 커뮤니티
-- LangChain 팀
+- **이강희**
 
